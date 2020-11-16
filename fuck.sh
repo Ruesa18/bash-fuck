@@ -21,41 +21,19 @@ function oneLineFuck {
 }
 
 function moveFuck {
-    # moving
-    clear
-    echo "FUCK!"
-    goToEnd
-    sleep 0.2s
-
-    clear
-    echo ""
-    echo " FUCK!"
-    goToEnd
-    sleep 0.2s
-
-    clear
-    echo ""
-    echo ""
-    echo "  FUCK!"
-    goToEnd
-    sleep 0.2s
-
-    clear
-    echo
-    echo
-    echo
-    echo "   FUCK!"
-    goToEnd
-    sleep 0.2s
-
-    clear
-    echo
-    echo
-    echo
-    echo
-    echo "    FUCK!"
-    goToEnd
-    sleep 0.2s
+    spacing=""
+    for ((i=1; i<=num_lines-2; i++))
+    do
+        clear
+        for (( c=1; c<=i; c++ ))
+        do
+            echo
+        done
+        spacing="$spacing "
+        echo "$spacing Fuck"
+        goToEnd
+        sleep 0.1s
+    done
 }
 
 function egocentricFuck {
