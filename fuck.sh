@@ -22,8 +22,7 @@ function oneLineFuck {
 
 function moveFuck {
     spacing=""
-    for ((i=1; i<=num_lines-2; i++))
-    do
+    for((i=1; i<=num_lines-2; i++)) do
         clear
         for (( c=1; c<=i; c++ ))
         do
