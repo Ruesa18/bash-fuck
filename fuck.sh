@@ -2,8 +2,19 @@
 # Command: Fuck
 # Author: DadoMimi
 # Date: 16.11.2020
+source config.sh
 
 function oneLineFuck {
+    if [ $oneLineFuckBackgroundColor != false ]; then
+      printf %b $oneLineFuckBackgroundColor '\e[8]' '\e[H\e[J'
+    fi
+
+    color=$COLOR_WHITE
+    if [ $oneLineFuckForegroundColor != false ]; then
+      color=$oneLineFuckForegroundColor
+    fi
+    echo -e $color
+
     clear
     echo "FUCK!"
     goToEnd
@@ -22,8 +33,17 @@ function oneLineFuck {
 
 function moveFuck {
     spacing=""
-    for ((i=1; i<=num_lines-2; i++))
-    do
+    if [ $moveFuckBackgroundColor != false ]; then
+      printf %b $moveFuckBackgroundColor '\e[8]' '\e[H\e[J'
+    fi
+
+    color=$COLOR_WHITE
+    if [ $moveFuckForegroundColor != false ]; then
+      color=$moveFuckForegroundColor
+    fi
+    echo -e $color
+
+    for((i=1; i<=num_lines-2; i++)) do
         clear
         for (( c=1; c<=i; c++ ))
         do
@@ -39,6 +59,15 @@ function moveFuck {
 function egocentricFuck {
     halfWordLength=3
     y_center=`expr $y_center - $halfWordLength`
+    if [ $egocentricFuckBackgroundColor != false ]; then
+      printf %b $egocentricFuckBackgroundColor '\e[8]' '\e[H\e[J'
+    fi
+
+    color=$COLOR_WHITE
+    if [ $egocentricFuckForegroundColor != false ]; then
+      color=$egocentricFuckForegroundColor
+    fi
+    echo -e $color
 
     clear
     tput cup $x_center $y_center
@@ -82,6 +111,14 @@ num_cols=`tput cols`
 x_center=`expr $num_lines / 2`
 y_center=`expr $num_cols / 2`
 
-oneLineFuck
-moveFuck
-egocentricFuck
+if [ $oneLine == true ]; then
+  oneLineFuck
+fi
+
+if [ $movingFuck == true ]; then
+  moveFuck
+fi
+
+if [ $egocentricFuck == true ]; then
+  egocentricFuck
+fi
