@@ -2,7 +2,7 @@
 # Command: Fuck
 # Author: DadoMimi
 # Date: 16.11.2020
-source config.sh
+source fuck-files/config.sh
 
 function oneLineFuck {
     if [ $oneLineFuckBackgroundColor != false ]; then
