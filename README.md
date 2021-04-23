@@ -18,5 +18,5 @@ In the end it's one of those "just for fun"-projects. We'll see if I'll add more
 
 ## Installation
 To install this neat feature just download the project from [GitHub](https://github.com/Ruesa18/bash-fuck) or clone it.
-After that you can run the `install.sh` script inside the project folder. This will automatically set you up with everything you need.
-Note there's also a `uninstall.sh` which you can use if you ever wish to remove this command again.
+After that you can run the `install.sh` script inside the project folder. (You will need to make it executable by `chmod +x install.sh`) This will automatically set you up with everything you need.
+Note there's also a `uninstall.sh` (You will need to make it executable as well with `chmod +x uninstall.sh`) which you can use if you ever wish to remove this command again.
