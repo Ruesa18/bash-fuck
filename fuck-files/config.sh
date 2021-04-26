@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source fuck-files/definitions.sh
+source /bin/fuck-files/definitions.sh
 
 # Values you can change:
 oneLine=true
