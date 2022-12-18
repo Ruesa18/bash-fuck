@@ -5,12 +5,12 @@
 source bin/fuck-files/config.sh
 
 function oneLineFuck {
-    if [ $oneLineFuckBackgroundColor != false ]; then
+    if [[ $oneLineFuckBackgroundColor != false ]]; then
       printf %b $oneLineFuckBackgroundColor '\e[8]' '\e[H\e[J'
     fi
 
     color=$COLOR_WHITE
-    if [ $oneLineFuckForegroundColor != false ]; then
+    if [[ $oneLineFuckForegroundColor != false ]]; then
       color=$oneLineFuckForegroundColor
     fi
     echo -e $color
@@ -33,12 +33,12 @@ function oneLineFuck {
 
 function moveFuck {
     spacing=""
-    if [ $moveFuckBackgroundColor != false ]; then
+    if [[ $moveFuckBackgroundColor != false ]]; then
       printf %b $moveFuckBackgroundColor '\e[8]' '\e[H\e[J'
     fi
 
     color=$COLOR_WHITE
-    if [ $moveFuckForegroundColor != false ]; then
+    if [[ $moveFuckForegroundColor != false ]]; then
       color=$moveFuckForegroundColor
     fi
     echo -e $color
@@ -59,12 +59,12 @@ function moveFuck {
 function egocentricFuck {
     halfWordLength=3
     y_center=`expr $y_center - $halfWordLength`
-    if [ $egocentricFuckBackgroundColor != false ]; then
+    if [[ $egocentricFuckBackgroundColor != false ]]; then
       printf %b $egocentricFuckBackgroundColor '\e[8]' '\e[H\e[J'
     fi
 
     color=$COLOR_WHITE
-    if [ $egocentricFuckForegroundColor != false ]; then
+    if [[ $egocentricFuckForegroundColor != false ]]; then
       color=$egocentricFuckForegroundColor
     fi
     echo -e $color
@@ -111,14 +111,14 @@ num_cols=`tput cols`
 x_center=`expr $num_lines / 2`
 y_center=`expr $num_cols / 2`
 
-if [ $oneLine == true ]; then
+if [[ $oneLine == true ]]; then
   oneLineFuck
 fi
 
-if [ $movingFuck == true ]; then
+if [[ $movingFuck == true ]]; then
   moveFuck
 fi
 
-if [ $egocentricFuck == true ]; then
+if [[ $egocentricFuck == true ]]; then
   egocentricFuck
 fi
